@@ -1,0 +1,47 @@
+<br>
+<div class="download">
+  <input type="file" (change)="uploadedFile($event)"  accept=".xlsx">    <!--input type file = browse button, accept - filter for what file type the user can pick  -->
+</div>
+<br>
+
+<table border = '1' class="table">
+  <thead> <!--change this to grab headers in the worksheet. this is currently hardcoded-->
+    <tr>
+      <th>Trans Id</th>
+      <th>acct_Id</th>
+      <th>acct_balance</th> 
+      <th>acct_type</th>
+      <th>branch</th>
+      <th>date</th>
+      <th>location</th>
+      <th>trans_amount</th>
+      <th>trans_operation</th>
+      <th>trans_type</th>
+    </tr>
+  </thead>
+
+   <tbody>
+
+    <tr *ngFor = "let work of worksheet"> 
+        <td>{{work.trans_id}}</td>
+        <td>{{work.acct_id}}</td> 
+        <td>{{work.acct_balance}}</td>
+        <td>{{work.acct_type}}</td> 
+        <td>{{work.branch}}</td>
+        <td>{{work.date}}</td>
+        <td>{{work.location}}</td>
+        <td>{{work.trans_amount}}</td>
+        <td>{{work.trans_operation}}</td>
+        <td>{{work.trans_type}}</td>
+  
+        
+         
+    </tr>
+   </tbody>
+  </table>
+
+
+<br>
+  <div class="download">
+    <button (click)="exportAsXLSX()">Download</button>
+  </div>

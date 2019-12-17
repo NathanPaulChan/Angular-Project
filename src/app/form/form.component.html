@@ -1,0 +1,39 @@
+<div>
+    <form #loginForm="ngForm">
+        <div class="form-group">
+            <label for="firstname">what's your first name?</label>
+            <input type="text" class="form-control" id="firstname"  [(ngModel)]="model.firstname" name="firstname" #firstname="ngModel" [ngModelOptions]="{updateOn: 'blur'}" required pattern="[A-Za-z]{1,99}">
+            <div [hidden]="firstname.valid" class="alert alert-danger">
+                First name is required
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="lastname">what's your last name?</label>
+                <input type="text" class="form-control" id="lastname"  [(ngModel)]="model.lastname" name="lastname" #lastname="ngModel" [ngModelOptions]="{updateOn: 'blur'}" required pattern="[A-Za-z]{1,99}">
+                <div [hidden]="lastname.valid" class="alert alert-danger">
+                    Last name is required
+                </div>
+            </div>
+            <button class="btn btn-success" (click)="onSubmit()" [disabled]="!loginForm.form.valid">
+                Submit
+            </button>
+    </form>
+    <div >
+        <table class="table table-striped" id='table' >
+            <thead>
+                <tr >
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="model.firstname && model.lastname">
+                  <!--   <tr *ngFor = "let data of model">  -->
+                        <td></td>  
+                        
+                    </tr>
+            </tbody>
+        </table>
+        <!-- <h3>Hello {{model.firstname}} {{model.lastname}}</h3> -->
+    </div>
+</div>

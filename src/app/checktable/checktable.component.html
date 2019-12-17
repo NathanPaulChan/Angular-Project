@@ -1,0 +1,72 @@
+<table id = "table" border = '1'>
+        <thead>
+          <tr>
+            <th>Person ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Screen Time</th>
+            
+          </tr>
+        </thead>
+      
+         <tbody>
+      
+          <tr *ngFor = "let messages of message"> 
+              <td>{{messages.PersonId}}</td>
+              <td>{{messages.FirstName}}</td>  
+              <td>{{messages.LastName}}</td> 
+              <td>{{messages.Gender}}</td>
+              <td>{{messages.Age}}</td>
+              <td>{{messages.Location}}</td>
+              <td>{{messages.Date.toDateString()}}</td> 
+              <td>{{messages.ScreenTime}}</td>
+              
+               
+          </tr>
+         </tbody>
+        </table>
+<br>
+        <div>
+          <button 
+            routerLink="/barchart"
+            id="Messenger"
+            class="btn btn-primary" 
+            >Bar Chart</button>
+        </div>
+
+<br>
+<br>
+<br>
+        <div>
+          <button 
+            routerLink="/lchart"
+            id="Messenger"
+            class="btn btn-primary" 
+            >Line Chart</button>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <div>
+          <button 
+            routerLink="/barchart"
+            id="Messenger"
+            class="btn btn-primary" 
+            >Pie Chart</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
+          <button 
+            routerLink="/barchart"
+            id="Messenger"
+            class="btn btn-primary" 
+            >Doughnut Chart</button>
+        </div>
+

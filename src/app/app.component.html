@@ -1,0 +1,36 @@
+<<!DOCTYPE html>
+
+<html>
+	<body>		
+<!--   header   -->
+		<header id="header">
+			<!--   logo  -->
+			<div id="logo">
+				<h1>
+					<a routerLink="home">
+						<img src="./assets/usbank.png" width = "200">
+					</a>
+				</h1>
+			</div>
+			<nav>
+				<!--list of links on the header-->
+				<div class="innertube">
+				<ul>
+					<li><a routerLink="home">Home</a></li> <!--had href previously - but would not load the page dynamically. changed to routerLink -->
+					<li><a routerLink="table">Table</a></li>					
+					<li><a routerLink="excel">excel</a></li>
+					<li><a routerLink="linechart">LineChart API	</a></li>
+					<li> <a routerLink="form">Form</a></li>
+					<li> <a routerLink="reactiveform">Reactive Formm</a></li>
+				</ul>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="app-component">
+				<router-outlet></router-outlet>
+			</div>
+		</main>
+	
+	</body>
+</html>

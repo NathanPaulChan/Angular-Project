@@ -1,0 +1,66 @@
+
+<form [formGroup]="userprofileForm" (ngSubmit)="onSubmit()">
+    
+
+    <label>
+        First Name:
+        <input type="text" class = "form-control" formControlName="firstname" name="firstname">
+    </label>
+    <br>
+    <label>
+        Last Name:
+        <input type="text" class = "form-control" formControlName="lastname">
+    </label>
+    <br>
+    <label>
+        Age:
+        <input type="text" class = "form-control" formControlName="age">
+    </label>
+    <br>
+    <label>
+        Screentime:
+        <input type="text"  class = "form-control" formControlName="screentime">
+    </label>
+<br>
+    <button type="submit" class="btn btn-success" [disabled]="!userprofileForm.valid">Submit</button>
+
+</form>
+ 
+<table border="1" id='table'>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Screentime</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- <form>
+    <div>
+        <label>What's your first name?</label>
+        <input class="form-control" [formControl]="firstname">
+    </div>
+    <div>
+            <label>What's your last name?</label>
+            <input class="form-control" [formControl]="lastname">
+        </div>
+    <button type="submit" (click)="onSubmit()" class="btn btn-success">Submit</button>
+</form>
+<table border="1">
+    <tr>
+        <td>{{firstname.value}}</td>
+        <td>{{lastname.value}}</td> 
+    </tr>
+</table> -->

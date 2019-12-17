@@ -1,0 +1,75 @@
+<h3>Person Table</h3>
+  <!-- generic buttons
+<button id="Ascend"
+  class="btn btn-primary" 
+  (click)="SortFirstName()">Ascend by First Name
+</button>
+<button id="Descend"
+  class="btn btn-primary" 
+  (click)="SortLastName()">Ascend by Last Name
+</button>
+-->
+
+
+
+<!--  dropdown filter/button from w3schools  -->
+<div class="dropdown">
+  <button class="dropbtn">Filter</button>
+  <div class="dropdown-content">
+      <p (click)="SortFirstName()">First Name</p> <!--on click: will use this function that is declared in the table.component.ts file-->
+      <p (click)="SortLastName()">Last Name</p>
+      <p (click)="SortFemaleGender()">Female</p>
+      <p (click)="SortMaleGender()">Male</p>
+      <p (click)="SortAge()">Age</p>
+      <p (click)="SortLocation()">Location</p>
+      <p (click)="SortDate()">Date</p>
+  </div>
+</div>
+<br><br>
+<hr>
+<br>
+
+
+<!-- Table  -->
+<table id = "table" border = '1'>
+  <thead>
+    <tr>
+      <th>Person ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Location</th>
+      <th>Date</th>
+      <th>Screen Time (Hrs)</th>
+      <th>Is Checked</th>
+      <th><input type="checkbox" [(ngModel)]="allDataSelected" (change)="selectedAll()">Select All</th>
+    </tr>
+  </thead>
+
+   <tbody>
+    <tr *ngFor = "let data of userData"> <!-- call the ngFor directive-->
+        <td>{{data.PersonId}}</td>
+        <td>{{data.FirstName}}</td>  <!--angular expressions that will populate the table with the given data from the table.component.ts file-->
+        <td>{{data.LastName}}</td> <!-- string interpolation -->
+        <td>{{data.Gender}}</td>
+        <td>{{data.Age}}</td>
+        <td>{{data.Location}}</td>
+        <td>{{data.Date.toDateString()}}</td> <!--toDateString formats the date output differently - gets rid of the hours / minutes / seconds-->
+        <td>{{data.ScreenTime}}</td>
+        <td>{{data.isChecked}}</td>
+         <td><input type="checkbox" [(ngModel)]="data.isChecked" (change)="selectData()" (click)="toggleVisibility($event)" value="{{data.PersonId}}"> </td>
+    </tr>
+   </tbody>
+  </table>
+
+<br>
+
+<div>
+  <button 
+    routerLink="/checktable"
+    id="Messenger"
+    class="btn btn-primary" 
+    (click)="isCheckedArray()"
+    >Submit</button>
+</div>

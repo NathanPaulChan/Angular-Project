@@ -1,0 +1,41 @@
+ 
+<div>
+    <canvas id="canvas">{{ chart }}</canvas>
+  </div>
+
+  <!-- <ul>
+    <li *ngFor="let data of total">
+      {{data.temp_max}}
+    </li>
+  </ul> -->
+
+
+<table id = "table" border = '1'>
+   <thead>
+    <tr>
+      <th>temp</th>
+      <th>temp max</th>
+      <th>temp min</th>
+      <th>sea level</th>
+      <th>pressure</th>
+      <th>humidity</th>
+      <th>ground level</th>
+    </tr>
+  </thead> 
+
+   <tbody>
+    <tr *ngFor = "let data of total"> 
+        <td>{{data.temp}}</td>
+        <td>{{data.temp_max}}</td>
+        <td>{{data.temp_min}}</td>
+        <td>{{data.sea_level}}</td>
+        <td>{{data.pressure}}</td>
+        <td>{{data.humidity}}</td>
+        <td>{{data.grnd_level}}</td>
+    </tr>
+   </tbody>
+  </table>
+
+
+
+
